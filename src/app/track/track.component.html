@@ -1,0 +1,8 @@
+<kendo-grid [data]="view" [scrollable]="none">
+  <kendo-grid-column width="50">
+    <template kendoGridCellTemplate let-dataItem>
+      <app-track-control [track]="dataItem"></app-track-control>
+    </template>
+  </kendo-grid-column>
+  <kendo-grid-column field="trackCensoredName" title="Track Name"></kendo-grid-column>
+</kendo-grid>

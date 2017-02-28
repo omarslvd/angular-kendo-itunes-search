@@ -1,0 +1,16 @@
+<kendo-grid [data]="view" [pageSize]="pageSize" [skip]="skip" [pageable]="true" (pageChange)="pageChange($event)">
+  <kendo-grid-column field="artworkUrl60" title=" " width="95">
+    <template kendoGridCellTemplate let-dataItem>
+      <img src="{{dataItem.artworkUrl60}}">
+    </template>
+  </kendo-grid-column>
+  <kendo-grid-column field="collectionName" title="Album Title"></kendo-grid-column>
+  <kendo-grid-column field="releaseDate" title="Release Date">
+    <template kendoGridCellTemplate let-dataItem>
+      <p>{{dataItem.releaseDate | date}}</p>
+    </template>
+  </kendo-grid-column>
+  <div *kendoGridDetailTemplate="let dataItem">
+    <app-track [collectionId]="dataItem.collectionId"></app-track>
+  </div>
+</kendo-grid>
